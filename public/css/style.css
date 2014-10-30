@@ -8,6 +8,9 @@ h1 {
   padding: 0 0 20px;
   color: #00b4ff;
 }
+img {
+  max-width: 100%;
+}
 .btn-primary {
   background: #00b4ff;
   border-color: #00a2e6;
