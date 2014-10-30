@@ -27,14 +27,20 @@ Game.prototype.gameOn = function(id) {
   this.$startChallenge.classList.toggle('hidden');
   this.$gameOn.classList.toggle('hidden');
 
-  $id('gameId').value = window.location.href;
+  // player
+  var location = window.location.href;
+  if(location.match('\/challenger')){
+    location = location.replace('challenger', 'opponent');
+  }else{
+    location = location.replace('opponent', 'challenger');
+  }
+  $id('gameId').value = location;
 };
 
 var theGame = new Game();
 
 
 document.forms.startChallenge.onsubmit = function(e){
-
   e.preventDefault();
 
   var data = {
@@ -56,6 +62,6 @@ gameId.parentNode.addEventListener('click', function(){ gameId.select(); }, fals
 
 socket.on('game on', function(id){
   // window.location = '/game/'+ id;
-  window.history.pushState({ do_I: 'matter' }, 'Start game on', '/game/'+ id);
+  window.history.pushState({ do_I: 'matter' }, 'Start game on', '/game/'+ id +'/challenger');
   theGame.gameOn(id);
 });

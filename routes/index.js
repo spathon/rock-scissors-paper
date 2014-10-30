@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
 });
 
 
-router.get('/game/:id', function(req, res){
+router.get('/game/:id/:type', function(req, res){
 
   res.render('index', { id: req.params.id });
 
