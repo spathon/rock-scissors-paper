@@ -1,5 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  form#startChallenge(name="startChallenge")
+    .row.form-group
+      .col-sm-6
+        label(for='challenger') Challenger
+        input#challenger.form-control(placeholder='You', required)
+      .col-sm-6
+        label(for='opponent') Opponent
+        input#opponent.form-control(placeholder='Your enemy', required)
+    .form-group
+      button.btn.btn-primary(type='submit') Start game
+
+  #gameOn.hidden
+    h2 Let's play

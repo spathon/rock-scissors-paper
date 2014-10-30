@@ -1,7 +1,19 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #515151;
+  background: #eee;
+  margin-top: 20px;
 }
-a {
-  color: #00b7ff;
+h1 {
+  text-align: center;
+  padding: 0 0 20px;
+  color: #00b4ff;
+}
+.btn-primary {
+  background: #00b4ff;
+  border-color: #00a2e6;
+}
+.container {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
 }
